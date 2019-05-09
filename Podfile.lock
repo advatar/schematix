@@ -1,5 +1,4 @@
 PODS:
-  - ExtensionKit (0.0.1)
   - Protobuf (3.7.0)
   - SMART (4.0.0)
   - Textile (0.1.5):
@@ -9,29 +8,22 @@ PODS:
     - Protobuf (~> 3.7)
 
 DEPENDENCIES:
-  - ExtensionKit (from `../deps/ExtensionKit`)
-  - SMART (from `../deps/Swift-SMART`)
+  - SMART
   - Textile
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Protobuf
+    - SMART
     - Textile
     - TextileCore
 
-EXTERNAL SOURCES:
-  ExtensionKit:
-    :path: "../deps/ExtensionKit"
-  SMART:
-    :path: "../deps/Swift-SMART"
-
 SPEC CHECKSUMS:
-  ExtensionKit: 9e2383831b30f5e7bf561c0114c5ce6685ab9bbd
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SMART: 223960c033d1195488fc6dd30fe3da334c60f8bc
   Textile: 42457e710b2f9d7e19e47a4c934b38ae692fe364
   TextileCore: 757c0ee2e4c423055693a9c51ccbad58b3fd0597
 
-PODFILE CHECKSUM: 1aa7d2812428ff9a9e1e258d383b2ab8f7b4a2ca
+PODFILE CHECKSUM: fe1e494b8af4fabb9299622c72ffec91b9f4c09b
 
 COCOAPODS: 1.6.1

@@ -8,7 +8,6 @@
 
 import UIKit
 import Textile
-import ExtensionKit
 import SMART
 
 @UIApplicationMain
@@ -54,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func putExamples(threadId: String) {
         var error: NSError?
-        let examples:[String] = ["ClinicalImpression", "MedicationRequest"]
+        let examples:[String] = ["ClinicalImpression","ClinicalImpression","ClinicalImpression", "MedicationRequest","MedicationRequest"]
         for example in examples {
             if let path = Bundle.main.path(forResource: example, ofType: "json") , let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe), let json64: String = jsonData.base64EncodedString() {
                 let files = textile.files.prepareSync(json64, threadId: threadId , error: &error)
@@ -63,8 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print(example, " OK")
                 } else {
                     print(example, error)
-                    //let jsonString = String(data: jsonData, encoding: .utf8)
-                    //print(jsonString)
                 }
             }
         }
@@ -73,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getExamples(threadId: String) {
         var error: NSError?
         let filesList = textile.files.list(nil, limit: 10000, threadId: threadId, error: &error)
-        
+
         if let filesArrays = Array(filesList.itemsArray) as? [Files] {
             for fileArray in filesArrays {
                 if let user = fileArray.user, let timestamp = fileArray.date {
@@ -84,9 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 if let base64Encoded = str.base64URLToString(), let decodedData = Data(base64Encoded: base64Encoded), let json = try? JSONSerialization.jsonObject(with: decodedData, options: []) as? FHIRJSON {
 
                                     if let medicationRequest = try? MedicationRequest(json: json)  {
-                                        print("medicationRequest ", medicationRequest.text)
+                                        print("medicationRequest ", medicationRequest.identifier)
                                     } else if let clinicalImpression = try? ClinicalImpression(json: json) {
-                                        print("clinicalImpression ", clinicalImpression.text)
+                                        print("clinicalImpression ", clinicalImpression.identifier)
                                     }
                                     /*
                                     if let decodedString = String(data: decodedData, encoding: .utf8) {

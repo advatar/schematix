@@ -16,6 +16,7 @@
 		041DD57B228346BD0069D729 /* fhir.json in Resources */ = {isa = PBXBuildFile; fileRef = 041DD57A228346BD0069D729 /* fhir.json */; };
 		04211EAB22845FFA0027E369 /* ClinicalImpression.json in Resources */ = {isa = PBXBuildFile; fileRef = 04211EAA22845FFA0027E369 /* ClinicalImpression.json */; };
 		04211EAD228465230027E369 /* MedicationRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 04211EAC228465230027E369 /* MedicationRequest.json */; };
+		04211EAF22849C000027E369 /* ExtensionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04211EAE22849C000027E369 /* ExtensionKit.swift */; };
 		1487741B903BA4D5A75C4EC2 /* Pods_schematix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5011DEE0A69FE128A533FD3B /* Pods_schematix.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		041DD57A228346BD0069D729 /* fhir.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fhir.json; sourceTree = "<group>"; };
 		04211EAA22845FFA0027E369 /* ClinicalImpression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ClinicalImpression.json; sourceTree = "<group>"; };
 		04211EAC228465230027E369 /* MedicationRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MedicationRequest.json; sourceTree = "<group>"; };
+		04211EAE22849C000027E369 /* ExtensionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionKit.swift; sourceTree = "<group>"; };
 		5011DEE0A69FE128A533FD3B /* Pods_schematix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schematix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87EB0F12ACD80C8AFCF8778C /* Pods-schematix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schematix.release.xcconfig"; path = "Target Support Files/Pods-schematix/Pods-schematix.release.xcconfig"; sourceTree = "<group>"; };
 		B9889C9CBAC290FC78AA5DD4 /* Pods-schematix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schematix.debug.xcconfig"; path = "Target Support Files/Pods-schematix/Pods-schematix.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		041DD56322833C840069D729 /* schematix */ = {
 			isa = PBXGroup;
 			children = (
+				04211EAE22849C000027E369 /* ExtensionKit.swift */,
 				04211EAC228465230027E369 /* MedicationRequest.json */,
 				04211EAA22845FFA0027E369 /* ClinicalImpression.json */,
 				041DD57A228346BD0069D729 /* fhir.json */,
@@ -182,7 +185,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-schematix/Pods-schematix-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ExtensionKit/ExtensionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SMART/SMART.framework",
 				"${BUILT_PRODUCTS_DIR}/Textile/Textile.framework",
@@ -192,7 +194,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExtensionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SMART.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Textile.framework",
@@ -232,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04211EAF22849C000027E369 /* ExtensionKit.swift in Sources */,
 				041DD56722833C840069D729 /* ViewController.swift in Sources */,
 				041DD56522833C840069D729 /* AppDelegate.swift in Sources */,
 			);
