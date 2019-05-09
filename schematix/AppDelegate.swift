@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let block = self.textile.files.add(files.dir, threadId: threadId, caption: nil, error: &error)
                 if let blockId = block.id_p, !blockId.isEmpty {
                     print(example, " OK")
+                    print(block)
                 } else {
                     print(example, error)
                 }
@@ -77,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     if let files = Array(fileArray.filesArray) as? [File] {
                         for file in files {
                             if let item = file.file {
+                                print(item)
                                 let str = textile.files.data(item.hash_p, error: &error)
                                 if let base64Encoded = str.base64URLToString(), let decodedData = Data(base64Encoded: base64Encoded), let json = try? JSONSerialization.jsonObject(with: decodedData, options: []) as? FHIRJSON {
 
